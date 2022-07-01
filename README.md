@@ -20,6 +20,27 @@ g++ ./main.cpp ./TestTask.cpp
 ```
 С++17 
 
+# mounting
+ ```C++
+ IVFS fs("./directory");
+ ```
+# creating file 
+```C++ 
+File * f = fs.Create("/dir1/dir2/dir3/file1.txt");
+```
+# reading 
+```C++ 
+size_t num = fs.Read(f, buff, buffsize);
+```
+# writing
+```C++ 
+size_t num = fs.Write(f, buff, len);
+```
+# close
+```C++ 
+fs.close(f);
+```
+
 При завершении работы виртуальной системы данные о файлах записываются в info.txt в таком порядке : 
 
 
@@ -27,3 +48,4 @@ g++ ./main.cpp ./TestTask.cpp
 2. порядковый номер файла
 3. стартовая позиция в физическом файле (отступ)
 4. количество символов
+
